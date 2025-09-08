@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Math 460 Fall 2025 - Class Notes}
+\author{Joshua Gonzalez}
+\date{}
+\usepackage{needspace}
+% Theorem Environments
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+
+\begin{document}
+\maketitle
+
+\section{Partitions and Equivalence Relations}
+
+\begin{definition}[Partition]
+Given a set $S$, a \emph{partition} of $S$ is a collection $\mathcal{P}$ of subsets of $S$ such that:
+\begin{enumerate}
+    \item Every $P \in \mathcal{P}$ is nonempty.
+    \item Every $s \in S$ belongs to exactly one $P \in \mathcal{P}$.
+\end{enumerate}
+\end{definition}
+\begin{remark}
+    Given a set $S$, a binary relation $\sim$ on $S$ is a subset of $S \times S$. Usually, for $a, b \in S$, we write $a \sim b$ iff $(a,b)$ lies in the subset. 
+\end{remark}
+
+\begin{definition}[Equivalence Relation]
+A binary relation $\sim$ on a set $S$ is an \emph{equivalence relation} if it is:
+\begin{enumerate}
+    \item Reflexive: for every $x \in S$, $x \sim x$
+    \item Symmetric: for every $x$, $y \in S$, $y \sim x$.
+    \item Transitive: for every $x, y, z \in S$, if $x \sim y$ and $y \sim z$, then $x \sim z$.
+\end{enumerate}
+
+\begin{remark}
+    If $\sim$ is an equivalence relation on $S$, then for any $t \in S$, the \emph{equivalence class} of $t$ is defined as $C_t = \{ s \in S : s \sim t \}$. The set of all equivalence classes forms a partition of $S$.
+\end{remark}
+
+\begin{remark}
+    Giving a partition on $S$ corresponds to giving an equivalence relation on $S$.
+\end{remark}
+\end{definition}
+
+\section{Functions}
+
+\begin{remark}
+    Suppose $A$ and $B$ are sets.
+    \begin{enumerate}
+        \item The identity function on $A$ is the function $id_A : A \to A$ defined by $id_A(x) = x$
+        \item Given a function $f : A \to B$ and subsets $S \subseteq A$ and $T \subseteq B$, the image of $S$ under $f$ is defined as $f(S) = \{ f(x) : x \in S \} \subseteq B$.
+        \item The inverse image (or preimage) of a subset $T$ under $f$ is defined as $f^{-1}(T) = \{ y \in A : f(y) \in T \} \subseteq A$.
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Injective, Surjective, Bijective]
+Let $f : A \to B$ where $A$ and $B$ are sets.
+\begin{enumerate}
+    \item $f$ is \emph{injective}(or 1-1) if, whenever $f(x) = f(y)$ for $x, y \in A$, then $x = y$.
+    \item $f$ is \emph{surjective}(or onto) if, for every $y \in B$, there exists $x \in A$ such that $f(x) = y$.
+    \item $f$ is \emph{bijective} if it is both injective and surjective.
+\end{enumerate}
+\end{definition}
+
+\section{Groups}
+
+\begin{definition}[Group]
+A \emph{group} is a pair $(G, \cdot)$ where $G$ is a set  and $\cdot$ is a binary operation on $G$, satisfying:
+\begin{enumerate}
+    \item (Associativity) for all $a,b,c \in $G$, (ab)c = a(bc)$ 
+    \item (Identity) There exists an identity element $1_G$ s.t. for all $a \in G$, $a1_G = 1_G a = a$.
+    \item (Inverses) For every $a \in G$, there exists $a^{-1} \in G$ such that $aa^{-1} = 1_G = a^{-1}a$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark} 
+    A binary operation on a set $G$ is a function from $G \times G$ to $G$ defined as $(a,b) \mapsto a \cdot b = ab$.
+\end{remark}
+
+\begin{remark}[Uniqueness of Identity and Inverses]
+    \needspace{3\baselineskip}
+        \item 1. The identity element $1_G$ is unique.
+        \item 2. The inverse $a^{-1}$ of any element $a \in G$ is unique.
+\end{remark}
+
+\begin{definition}[Abelian Group]
+A group $G$ is called \emph{abelian} (or commutative) if $ab = ba$ for all $a,b \in G$.
+\end{definition}
+
+\begin{definition}[Subgroup]
+A subgroup of a group $(G, \cdot)$ is a subset $H$ of $G$ s.t. $(H, \cdot)$ is a group. We write $H\leq G$ to denote "$H$ is a subgroup of $G$". Where $\cdot$ is the binary operation from $G$ and $H$ is closed under the group op in G, i.e. "$H$ is closed under $\cdot$".
+\end{definition}
+
+\begin{definition}[Subgroup Criterion]
+    Suppose $(G, \cdot)$ is a group and $H$ is a nonempty subset of $G$. Then $H \leq G$ if and only if 
+    \begin{enumerate}
+        \item for all $a,b \in H$, $ab \in H$ (closed under $\cdot$).
+        \item for all $a \in H$, $a^{-1} \in H$ (closed under taking inverses).
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}[Finite Subgroup Criterion]
+Suppose $(G, \cdot) $ is a group and $H$ is a finite subset of $G$. Then $H \leq G$ if and only if $H \neq \emptyset$ and for all $a,b \in H$, $ab \in H$ (i.e. $H$ is closed under $\cdot$).
+\end{lemma}
+
+\begin{theorem}[Lagrange’s Theorem]
+Let $G$ be a finite group and $H \leq G$. Then $|H|$ divides $|G|$.
+\end{theorem}
+
+\begin{definition}[Left and Right Cosets]
+Let $G$ be a group and $H \leq G$. For $g \in G$:
+\begin{align*}
+    gH &= \{ gh : h \in H \} \quad \text{(left coset)} \\
+    Hg &= \{ hg : h \in H \} \quad \text{(right coset)}.
+\end{align*}
+\end{definition}
+
+\begin{proposition}
+For a subgroup $H \leq G$, the collection of left cosets $\{ gH : g \in G \}$ forms a partition of $G$.  
+Similarly, the collection of right cosets $\{ Hg : g \in G \}$ also forms a partition of $G$.
+\end{proposition}
+
+\begin{lemma}
+Any two left cosets of $H$ in $G$ have the same cardinality.  
+(The same holds for right cosets.)
+\end{lemma}
+
+\begin{definition}[Index]
+The \emph{index} of a subgroup $H$ in $G$, denoted $[G : H]$, is the number of distinct left cosets of $H$ in $G$.
+\end{definition}
+\begin{definition}[Order of an Element]
+Let $G$ be a group and $g \in G$.  
+The \emph{order} of $g$, denoted $|g|$, is the smallest positive integer $n$ such that
+\[
+g^n = e,
+\]
+where $e$ is the identity element of $G$.  
+
+If no such $n$ exists, then $g$ is said to have infinite order.
+\end{definition}
+
+\begin{definition}[Normal Subgroup]
+A subgroup $N \leq G$ is called a \emph{normal subgroup}, written $N \trianglelefteq G$, if
+\[
+gN = Ng \quad \text{for all } g \in G.
+\]
+Equivalently, $N$ is normal if
+\[
+gNg^{-1} = N \quad \text{for all } g \in G.
+\]
+\end{definition}
+
+\begin{proposition}
+If $N \trianglelefteq G$, then the set of cosets $G/N = \{ gN : g \in G \}$ forms a group under the operation
+\[
+(gN)(hN) = (gh)N.
+\]
+This group is called the \emph{quotient group} of $G$ by $N$.
+\end{proposition}
+
+\section{Group Homomorphisms}
+
+\begin{definition}[Group Homomorphism]
+A function $\varphi : G \to H$ between groups is called a \emph{homomorphism} if
+\[
+\varphi(ab) = \varphi(a)\varphi(b) \quad \text{for all } a,b \in G.
+\]
+\end{definition}
+
+\end{document}
