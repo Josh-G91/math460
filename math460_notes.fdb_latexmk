@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1757441920.53006 "/home/functional/workspace/github.com/math460/math460_notes.tex" "math460_notes.pdf" "math460_notes" 1757441920.81708 0
+["pdflatex"] 1757453151.72754 "/home/functional/workspace/github.com/math460/math460_notes.tex" "math460_notes.pdf" "math460_notes" 1757453152.0277 0
   "/etc/texmf/web2c/texmf.cnf" 1740594274.77953 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/functional/workspace/github.com/math460/math460_notes.tex" 1757441920.35244 8758 f756627b10cfd8076b32d4961b58cac6 ""
+  "/home/functional/workspace/github.com/math460/math460_notes.tex" 1757453151.53678 8773 e4b261474504ef9dcd191742d20292e9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -50,8 +50,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740594298.67604 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740594317 8215438 d46124d1612a569c293fbcc46ff77eed ""
-  "math460_notes.aux" 1757441920.78867 454 c9f601fe886dff7b2379ff52847f0878 "pdflatex"
-  "math460_notes.tex" 1757441920.35244 8758 f756627b10cfd8076b32d4961b58cac6 ""
+  "math460_notes.aux" 1757453151.99316 454 c9f601fe886dff7b2379ff52847f0878 "pdflatex"
+  "math460_notes.tex" 1757453151.53678 8773 e4b261474504ef9dcd191742d20292e9 ""
   (generated)
   "math460_notes.aux"
   "math460_notes.log"

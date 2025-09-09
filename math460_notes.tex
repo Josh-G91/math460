@@ -32,7 +32,7 @@ Given a set $S$, a \emph{partition} of $S$ is a collection $\mathcal{P}$ of subs
 A binary relation $\sim$ on a set $S$ is an \emph{equivalence relation} if it is:
 \begin{enumerate}
     \item Reflexive: for every $x \in S$, $x \sim x$
-    \item Symmetric: for every $x$, $y \in S$, $y \sim x$.
+    \item Symmetric: for every $x$, $y \in S$, if $x \sim y$, $y \sim x$.
     \item Transitive: for every $x, y, z \in S$, if $x \sim y$ and $y \sim z$, then $x \sim z$.
 \end{enumerate}
 
@@ -52,7 +52,7 @@ A binary relation $\sim$ on a set $S$ is an \emph{equivalence relation} if it is
     \begin{enumerate}
         \item The identity function on $A$ is the function $id_A : A \to A$ defined by $id_A(x) = x$
         \item Given a function $f : A \to B$ and subsets $S \subseteq A$ and $T \subseteq B$, the image of $S$ under $f$ is defined as $f(S) = \{ f(x) : x \in S \} \subseteq B$.
-        \item The inverse image (or preimage) of a subset $T$ under $f$ is defined as $f^{-1}(T) = \{ y \in A : f(y) \in T \} \subseteq A$.
+        \item The inverse image (or preimage) of a subset $T \subseteq B$ under $f$ is defined as $f^{-1}(T) = \{ y \in A : f(y) \in T \} \subseteq A$.
     \end{enumerate}
 \end{remark}
 
@@ -94,6 +94,10 @@ A group $G$ is called \emph{abelian} (or commutative) if $ab = ba$ for all $a,b 
 A subgroup of a group $(G, \cdot)$ is a subset $H$ of $G$ s.t. $(H, \cdot)$ is a group. We write $H\leq G$ to denote "$H$ is a subgroup of $G$". Where $\cdot$ is the binary operation from $G$ and $H$ is closed under the group op in G, i.e. "$H$ is closed under $\cdot$".
 \end{definition}
 
+\begin{remark}
+    For any subgroup $H$ of $G$, $1_H = 1_G$ 
+\end{remark}
+
 \begin{definition}[Subgroup Criterion]
     Suppose $(G, \cdot)$ is a group and $H$ is a nonempty subset of $G$. Then $H \leq G$ if and only if 
     \begin{enumerate}
@@ -116,16 +120,12 @@ Suppose $(G, \cdot) $ is a group and $H$ is a finite subset of $G$. Then $H \leq
 \end{remark}
 
 \begin{definition}[Cosets]
-    When $H \leq G$, a left coset (resp. right coset) of $H \in G$ is a set of the form $gH$ (resp. $Hg$) for some $g \in G$.
+    When $H \leq G$, a left coset (resp. right coset) of $H$ in $G$ is a set of the form $gH$ (resp. $Hg$) for some $g \in G$.
 \end{definition}
 
 \begin{lemma}
 Any two left cosets of $H$ in $G$ have the same cardinality.  
 (The same holds for right cosets.)
-\end{lemma}
-
-\begin{lemma}
-Any two cosets (left or right) have the same cardinality.  
 \end{lemma}
 
 \begin{definition}[Left and Right Cosets]
@@ -141,12 +141,11 @@ $G/H$ is a partition of $G$. Similarly, $G\backslash H$ is a partition of $G$.
 \end{proposition}
 
 \begin{theorem}[Lagrange’s Theorem]
-Suppose $G$ be a finite group and $H \leq G$. Then $|H|$ divides $|G|$.
+Suppose $G$ is a finite group and $H \leq G$. Then $|H|$ divides $|G|$.
 \end{theorem}
 
-
 \begin{remark}
-    The converse of Lagrange's theorem is not true. The theorem does hold for cyclic groups.
+The converse of Lagrange's theorem is not true. The theorem does hold for cyclic groups.
 \end{remark}
 
 \begin{remark}
@@ -159,7 +158,7 @@ We define the \emph{index} of a subgroup $H$ in $G$, denoted $[G : H] := |G/H| =
 
 \begin{definition}[Order of an Element]
 Let $G$ be a group and $g \in G$.  
-If $g^k = 1_G$ for some positive integer $k$, then the least such $k$ is called the \emph{order} of $g$ denoted as $o(g) or |g|$.
+If $g^k = 1_G$ for some positive integer $k$, then the least such $k$ is called the \emph{order} of $g$ denoted as $o(g)$ or $|g|$.
 If $g^k \neq 1_G$ for every positive $k$, then we say $g$ has infinite order and write $o(g) = \infty$.
 \end{definition}
 \begin{remark}
@@ -200,7 +199,7 @@ Given a group $G$, a subgroup $H$ of $G$. We say $H$ is a \emph{normal subgroup}
 \section{Group Homomorphisms}
 
 \begin{definition}[Group Homomorphism]
-Suppose $G and H$ are groups. A group homomorphism from $G$ to $H$ is a function $\varphi : G \to H$ such that
+Suppose $G$ and $H$ are groups. A group homomorphism from $G$ to $H$ is a function $\varphi : G \to H$ such that
 $\forall a,b \in G, \varphi(ab) = \varphi(a)\varphi(b)$.
 \end{definition}
 \begin{remark}[Simple Facts]
