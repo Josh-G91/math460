@@ -106,68 +106,109 @@ A subgroup of a group $(G, \cdot)$ is a subset $H$ of $G$ s.t. $(H, \cdot)$ is a
 Suppose $(G, \cdot) $ is a group and $H$ is a finite subset of $G$. Then $H \leq G$ if and only if $H \neq \emptyset$ and for all $a,b \in H$, $ab \in H$ (i.e. $H$ is closed under $\cdot$).
 \end{lemma}
 
-\begin{theorem}[Lagrange’s Theorem]
-Let $G$ be a finite group and $H \leq G$. Then $|H|$ divides $|G|$.
-\end{theorem}
+\begin{remark}
+    Suppose $G$ is a group, and $S, T$ are subsets of $G$ while $g \in G$. Then
+    \begin{enumerate}
+        \item $gS = \{ gs : s \in S \}$
+        \item $Sg = \{ sg : s \in S \}$
+        \item $ST = \{ st : s \in S, t \in T \}$
+    \end{enumerate}
+\end{remark}
 
-\begin{definition}[Left and Right Cosets]
-Let $G$ be a group and $H \leq G$. For $g \in G$:
-\begin{align*}
-    gH &= \{ gh : h \in H \} \quad \text{(left coset)} \\
-    Hg &= \{ hg : h \in H \} \quad \text{(right coset)}.
-\end{align*}
+\begin{definition}[Cosets]
+    When $H \leq G$, a left coset (resp. right coset) of $H \in G$ is a set of the form $gH$ (resp. $Hg$) for some $g \in G$.
 \end{definition}
-
-\begin{proposition}
-For a subgroup $H \leq G$, the collection of left cosets $\{ gH : g \in G \}$ forms a partition of $G$.  
-Similarly, the collection of right cosets $\{ Hg : g \in G \}$ also forms a partition of $G$.
-\end{proposition}
 
 \begin{lemma}
 Any two left cosets of $H$ in $G$ have the same cardinality.  
 (The same holds for right cosets.)
 \end{lemma}
 
-\begin{definition}[Index]
-The \emph{index} of a subgroup $H$ in $G$, denoted $[G : H]$, is the number of distinct left cosets of $H$ in $G$.
-\end{definition}
-\begin{definition}[Order of an Element]
-Let $G$ be a group and $g \in G$.  
-The \emph{order} of $g$, denoted $|g|$, is the smallest positive integer $n$ such that
-\[
-g^n = e,
-\]
-where $e$ is the identity element of $G$.  
+\begin{lemma}
+Any two cosets (left or right) have the same cardinality.  
+\end{lemma}
 
-If no such $n$ exists, then $g$ is said to have infinite order.
-\end{definition}
-
-\begin{definition}[Normal Subgroup]
-A subgroup $N \leq G$ is called a \emph{normal subgroup}, written $N \trianglelefteq G$, if
-\[
-gN = Ng \quad \text{for all } g \in G.
-\]
-Equivalently, $N$ is normal if
-\[
-gNg^{-1} = N \quad \text{for all } g \in G.
-\]
+\begin{definition}[Left and Right Cosets]
+When $H$ is a subgroup of a group $G$
+\begin{enumerate}
+    \item $G/H := \{gH: g \in G\}$ the set of all left cosets of $H$ 
+    \item $G\backslash H := \{Hg: g \in G\}$ the set of all right cosets of $H$
+\end{enumerate}
 \end{definition}
 
 \begin{proposition}
-If $N \trianglelefteq G$, then the set of cosets $G/N = \{ gN : g \in G \}$ forms a group under the operation
-\[
-(gN)(hN) = (gh)N.
-\]
-This group is called the \emph{quotient group} of $G$ by $N$.
+$G/H$ is a partition of $G$. Similarly, $G\backslash H$ is a partition of $G$.
 \end{proposition}
+
+\begin{theorem}[Lagrange’s Theorem]
+Suppose $G$ be a finite group and $H \leq G$. Then $|H|$ divides $|G|$.
+\end{theorem}
+
+
+\begin{remark}
+    The converse of Lagrange's theorem is not true. The theorem does hold for cyclic groups.
+\end{remark}
+
+\begin{remark}
+For any set $S$ we often write $|S|$ to denote the cardinality of $S$. If $S$ is finite, then $|S|$ is a nonnegative integer. When $S$ is a subgroup of a group, we also use $o(S)$ to denote its cardinality.
+\end{remark}
+
+\begin{definition}[Index]
+We define the \emph{index} of a subgroup $H$ in $G$, denoted $[G : H] := |G/H| = |G\backslash H|$ equals the number of distinct (left or right) cosets. 
+\end{definition}
+
+\begin{definition}[Order of an Element]
+Let $G$ be a group and $g \in G$.  
+If $g^k = 1_G$ for some positive integer $k$, then the least such $k$ is called the \emph{order} of $g$ denoted as $o(g) or |g|$.
+If $g^k \neq 1_G$ for every positive $k$, then we say $g$ has infinite order and write $o(g) = \infty$.
+\end{definition}
+\begin{remark}
+    If $g \in G$ has infinite order, then all the integer powers of $g$ are distinct.
+\end{remark}
+
+\begin{proposition}
+    Suppose $G$ is a group and $g \in G$.
+    \begin{enumerate}
+        \item if $o(g) = \infty$, then $g^i = g^j$ if and only if $i = j$.
+        \item if $o(g) = n < \infty$, then $g^i = g^j$ if and only if $n | (i-j)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+If $G$ is a finite group, then for any $g \in G$, $o(g)$ divides $|G|$.
+\end{proposition}
+
+\begin{definition}[Normal Subgroup]
+Given a group $G$, a subgroup $H$ of $G$. We say $H$ is a \emph{normal subgroup} of $G$ if $gH = Hg$ for all $g \in G$ and write $H \trianglelefteq G$ if the following holds: $\forall k \in H, \forall g \in G, ghg^{-1} \in H$ the term $ghg^{-1}$ is called a conjugate of $h$.
+\end{definition}
+
+\begin{proposition}[Equivalent definitions of Normal Subgroups]
+    In particular, if $H \leq G$, then $H \trianglelefteq G$ if and only if any of the following equivalent conditions hold:
+    \begin{enumerate}
+        \item $gH = Hg$ for all $g \in G$.
+        \item $aHbH = abH$ for all $a,b \in G$.
+    \end{enumerate}
+    (1) implies the coset spaces $G/H$ and $G\backslash H$ coincide (equal as sets)
+    (2) means we can define a binary operation on $G/H \times G/H \to G/H$ by $(aH,bH) \mapsto (ab)H = (aH)(bH)$ 
+    this map makes $G/H$ into a group called the quotient group of $G$ by $H$ provided $H \trianglelefteq G$.
+\end{proposition}
+
+\begin{remark}
+    Any subgroup of an abelian group is normal.
+\end{remark}
 
 \section{Group Homomorphisms}
 
 \begin{definition}[Group Homomorphism]
-A function $\varphi : G \to H$ between groups is called a \emph{homomorphism} if
-\[
-\varphi(ab) = \varphi(a)\varphi(b) \quad \text{for all } a,b \in G.
-\]
+Suppose $G and H$ are groups. A group homomorphism from $G$ to $H$ is a function $\varphi : G \to H$ such that
+$\forall a,b \in G, \varphi(ab) = \varphi(a)\varphi(b)$.
 \end{definition}
+\begin{remark}[Simple Facts]
+    if $\varphi : G \to H$ is a group homomorphism, then for any $a \in G$,
+    \begin{enumerate}
+        \item $\varphi(1_G) = 1_H$
+        \item $\varphi(a^{-1}) = (\varphi(a))^{-1}$
+    \end{enumerate}
+\end{remark}
 
 \end{document}
